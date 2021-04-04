@@ -1,0 +1,116 @@
+lista = []
+
+print("Por favor, ingrese 5 elementos")
+
+for i in [1, 2, 3, 4, 5]:
+
+    elemento = input(f"Elemento {i}: ") #Busque formas de validar que sea solo string, pero me resultaron complejas por el momento.
+    lista.append(elemento)
+
+print("Los elementos de la lista son:")
+print(lista)
+
+print("¿Desea agregar o eliminar elementos de la lista?")
+print("y: Si // n: No --- SOLO MINUSCULAS")
+
+opcion = str(input())
+
+while opcion != 'y' and opcion != 'n':  #Validacion de opcion
+
+    print("ERROR: Por favor, ingrese las opciones dadas")
+    opcion = str(input())
+
+if opcion == 'y':
+
+    condicion = 1   #Condicion creada para darle inicio al while, al estilo "menu"
+    while condicion != 0:
+
+        print("¿Que desea realizar? ¿Agregar o eliminar?")
+        print("a: Añadir // e: Eliminar // s: Salir --- SOLO MINUSCULAS")
+        opcion_2 = str(input())
+
+        while opcion_2 != 'a' and opcion_2 != 'e' and opcion_2 != 's':  #Validacion de opcion
+
+            print("ERROR: Por favor, ingrese las opciones dadas")
+            opcion_2 = str(input())
+
+        if opcion_2 == 'a':
+
+            print("Ingrese el elemento a aÃ±adir: ")
+            elemento = str(input())
+
+            lista.append(elemento)
+
+            print("Estado de lista:") #Muestra a usuario para verificar
+            print(lista)
+
+            print("Â¿Desea agregar otro elemento?")
+            print("y: Si // n: No --- SOLO MINUSCULAS")
+            opcion_3 = str(input())
+
+            while opcion_3 != 'y' and opcion_3 != 'n': #Validacion de opcion
+                print("ERROR: Por favor, ingrese las opciones dadas")
+                opcion_3 = str(input())
+
+            while opcion_3 == 'y':
+                print("Ingrese otro elemento a añadir: ")
+                elemento = str(input())
+
+                lista.append(elemento)
+
+                print("Estado de lista:") #Muestra a usuario para verificar
+                print(lista)
+
+                print("¿Desea agregar otro elemento?")
+                print("y: Si // n: No --- SOLO MINUSCULAS")
+                opcion_3 = str(input())
+
+                while opcion_3 != 'y' and opcion_3 != 'n': #Validacion de opcion
+                    print("ERROR: Por favor, ingrese las opciones dadas")
+                    opcion_3 = str(input())
+
+        if opcion_2 == 'e':
+
+            print("Ingrese el elemento a eliminar")
+            print("IMPORTANTE: Debe ser exacto o el programa finalizará¡") #Se advierte al usuario
+            elemento = str(input())
+
+            lista.remove(elemento)
+
+            print("Estado de lista:")
+            print(lista)
+
+            print("¿Desea eliminar otro elemento?")
+            print("y: Si // n: No --- SOLO MINUSCULAS")
+            opcion_3 = str(input())
+
+            while opcion_3 != 'y' and opcion_3 != 'n': #Validacion de opcion
+                print("ERROR: Por favor, ingrese las opciones dadas")
+                opcion_3 = str(input())
+
+            while opcion_3 == 'y':
+                print("Ingrese otro elemento a eliminar: ")
+                elemento = str(input())
+
+                lista.remove(elemento)
+
+                print("Estado de lista:")
+                print(lista)
+
+                print("Â¿Desea eliminar otro elemento?")
+                print("y: Si // n: No --- SOLO MINUSCULAS")
+                opcion_3 = str(input())
+
+                while opcion_3 != 'y' and opcion_3 != 'n': #Validacion de opcion
+                    print("ERROR: Por favor, ingrese las opciones dadas")
+                    opcion_3 = str(input())
+
+        if opcion_2 == 's':
+
+            condicion = 0   #Se fuerza a que se cumpla la condiciÃ³n para que finalice el ciclo principal
+
+            print("¡Programa finalizado!")
+
+
+elif opcion == 'n':
+    print("¡Programa finalizado!")
