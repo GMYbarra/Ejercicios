@@ -1,0 +1,39 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def imprimir_datos(self):
+        print(f"Empleado: {self.nombre} - Edad: {self.edad}")
+
+class Empleado(Persona):
+    def __init__(self, sueldo):
+        self.sueldo= sueldo
+
+        if self.sueldo>3000:    #Valido para agregar estado de impuestos al empleado
+            self.estado_impuestos = 'Si'
+        else:
+            self.estado_impuestos = 'No'
+
+    def impuestos(self):    #Imprimo el estado
+        print('¿Paga impuestos? :', self.estado_impuestos)
+
+
+n = input("Ingrese nombre: ")   #Solicito datos previamente para cargarlos a la clase
+e = int(input("Ingrese edad:"))
+
+while e < 0:                        #Validacion
+    print("ERROR: Valor negativo")
+    e = int(input("Ingrese edad: "))
+
+nueva_persona = Persona(n,e)    #Declaro objeto, ingreso variables
+nueva_persona.imprimir_datos()
+
+s =  int(input("Ingresse sueldo: "))    #Solicito sueldo previamente para cargar al objeto
+
+while s < 0:                            #Validacion
+    print("ERROR: Valor negativo")
+    s = int(input("Ingrese sueldo: "))
+
+nuevo_empleado = Empleado(s)    #Declaro objeto, ingreso variables
+nuevo_empleado.impuestos()
