@@ -1,0 +1,27 @@
+print("Ingrese un numero :")
+
+num1=float(input()) #Al colocar float, evito que se ingrese otro tipo de dato
+
+print("Ingrese la operacion a realizar")
+print("IMPORTANTE: Solo escribir '+', '-', '*' (multiplicacion) o '/' (division)") #Advertencia para el usuario
+
+operacion=input()
+
+if operacion == "+" or operacion == "-" or operacion == "*" or operacion == "/": #Se crea IF para evitar error de usuario
+
+    print("Ingrese un segundo numero: ")
+
+    num2=float(input())
+    if operacion == "+":            #Segun el operador ingresado, se realiza el calculo que corresponda
+        resultado=num1+num2
+    if operacion == "-":
+        resultado=num1-num2
+    if operacion == "*":
+        resultado=num1*num2
+    if operacion == "/":
+        resultado=num1/num2
+
+    print(f"Resultado: {resultado}")
+
+else:
+    print("ERROR: Debe ingresar solo las 4 operaciones aclaradas, en el modo dicho") #Fin de if para validar operacion ingresada
