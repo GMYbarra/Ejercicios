@@ -1,0 +1,17 @@
+password="eduardo"
+
+pw_ingresada=input("Ingresar contraseña (MÃ¡ximo 3 intentos): ")
+
+i=1 #Se crea variable para inicializar el while
+
+while i<3 and pw_ingresada!=password:   #Se utiliza esa doble condición para que el while tenga un fin según los datos
+
+    pw_ingresada = input("Contraseña incorrecta, vuelva a ingresar: ")
+    i += 1   #se suma para evitar que sea infinito
+
+if pw_ingresada!=password:  #Al finalizar el while, el IF me verifica si excedí los intentos o si es correcto
+    print("Se excedió el número de intentos")
+    print("Fin del programa")
+else:
+    print("¡Contraseña correcta!")
+    print("Fin del programa")
